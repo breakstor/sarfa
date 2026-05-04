@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
 
 :root {
-    --primary-red: #db4444;
+    --primary-green: #16a34a;
+    --primary-green-hover: #15803d;
+    --primary-green-light: #dcfce7;
+
     --dark-navy: #0f172a;
     --font-main: 'Tajawal', sans-serif;
 }
@@ -16,7 +19,7 @@
 
 body { background: white; overflow-x: hidden; line-height: 1.6; }
 
-/* 2. الهيدر المنسق (استعادة التصميم المستقر) */
+/* 2. الهيدر */
 .main-header {
     height: 70px;
     display: flex;
@@ -42,12 +45,12 @@ body { background: white; overflow-x: hidden; line-height: 1.6; }
 .logo { 
     font-size: 26px; 
     font-weight: 900; 
-    color: var(--primary-red); 
+    color: var(--primary-green); 
     text-decoration: none;
 }
 
 .btn-primary { 
-    background: var(--primary-red); 
+    background: var(--primary-green); 
     color: white; 
     padding: 10px 25px; 
     border-radius: 50px; 
@@ -57,10 +60,14 @@ body { background: white; overflow-x: hidden; line-height: 1.6; }
     transition: 0.3s;
 }
 
-/* 3. قسم الهيرو (العنوان بدون شعار) */
+.btn-primary:hover {
+    background: var(--primary-green-hover);
+}
+
+/* 3. الهيرو */
 .hero {
     padding-top: 120px;
-    background: linear-gradient(to bottom, #fff5f5, #ffffff);
+    background: linear-gradient(to bottom, #f0fdf4, #ffffff);
     text-align: center;
 }
 
@@ -77,17 +84,17 @@ body { background: white; overflow-x: hidden; line-height: 1.6; }
     margin-bottom: 40px;
 }
 
-/* 4. تكبير الهاتف ومعالجة فراغ اليمين (الحل النهائي) */
+/* 4. الهاتف */
 .phone-container {
     position: relative;
-    width: 380px; /* حجم كبير وواضح للجوال */
+    width: 380px;
     margin: 0 auto -220px; 
     z-index: 100;
 }
 
 @media (min-width: 768px) {
     .phone-container {
-        width: 500px; /* حجم ضخم للكمبيوتر */
+        width: 500px;
         margin-bottom: -300px;
     }
 }
@@ -97,8 +104,8 @@ body { background: white; overflow-x: hidden; line-height: 1.6; }
 .screen {
     position: absolute;
     top: 2.1%; 
-    left: 5.8%;  /* تقليل المسافة من اليسار */
-    width: 88.6%; /* زيادة العرض لسد الفراغ جهة اليمين */
+    left: 5.8%;
+    width: 88.6%;
     height: 95.8%;
     background: #000;
     border-radius: 45px;
@@ -110,15 +117,15 @@ body { background: white; overflow-x: hidden; line-height: 1.6; }
 .slider img {
     width: 100%;
     height: 100%;
-    object-fit: fill; /* ملء الإطار بالكامل */
+    object-fit: fill;
     flex-shrink: 0;
 }
 
-/* 5. قسم بطاقات المعلومات (استعادة التنسيق الاحترافي) */
+/* 5. الفيتشرز */
 .features {
     background-color: var(--dark-navy);
     color: white;
-    padding: 280px 0 80px; /* مسافة كافية لبروز الهاتف */
+    padding: 280px 0 80px;
     position: relative;
     z-index: 1;
 }
@@ -151,12 +158,12 @@ body { background: white; overflow-x: hidden; line-height: 1.6; }
 .feature-card:hover {
     transform: translateY(-12px);
     background: rgba(255, 255, 255, 0.08);
-    border-color: var(--primary-red);
+    border-color: var(--primary-green);
 }
 
 .feature-card .icon {
     font-size: 45px;
-    color: var(--primary-red);
+    color: var(--primary-green);
     margin-bottom: 20px;
     display: block;
 }
@@ -164,7 +171,7 @@ body { background: white; overflow-x: hidden; line-height: 1.6; }
 .feature-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
 .feature-card p { color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; }
 
-/* 6. قسم التحميل السفلي (تصغير وتنسيق) */
+/* 6. التحميل */
 .download-section {
     padding: 100px 0;
     text-align: center;
@@ -177,16 +184,29 @@ body { background: white; overflow-x: hidden; line-height: 1.6; }
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    background: var(--primary-red);
+    background: var(--primary-green);
     color: white;
     padding: 18px 50px;
     border-radius: 18px;
     text-decoration: none;
-    box-shadow: 0 15px 30px rgba(219, 68, 68, 0.25);
+    box-shadow: 0 15px 30px rgba(22, 163, 74, 0.25);
     transition: 0.3s;
 }
 
-.btn-download-big:hover { transform: scale(1.03); }
-.btn-download-big .main-text { font-size: 1.3rem; font-weight: 800; }
+.btn-download-big:hover { 
+    transform: scale(1.03);
+    background: var(--primary-green-hover);
+}
 
-.footer { background: #020617; color: #94a3b8; text-align: center; padding: 30px 0; font-size: 0.9rem; }
+.btn-download-big .main-text { 
+    font-size: 1.3rem; 
+    font-weight: 800; 
+}
+
+.footer { 
+    background: #020617; 
+    color: #94a3b8; 
+    text-align: center; 
+    padding: 30px 0; 
+    font-size: 0.9rem; 
+}
